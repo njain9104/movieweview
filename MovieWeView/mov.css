@@ -1,0 +1,18 @@
+.thumbnail img{
+    width: 250px;
+    height: 300px;
+}
+.thumbnail{
+    background:#FAED26;
+    width: fit-content;
+    height: fit-content;
+}
+body{
+    background:url('back.jpg');
+    color:#FAED26;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img:hover{
+    opacity:0.9;
+}

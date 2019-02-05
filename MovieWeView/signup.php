@@ -89,7 +89,7 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
         </script>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
     </body>
 </html>

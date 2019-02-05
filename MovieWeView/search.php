@@ -54,13 +54,13 @@ session_start();    #To Track The Session
                             if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
                                 #Fetch The Movie Name And it's Link and Insert it in Table
-                                echo("<tr><td><h5><strong>".$row['movname']."</strong></h5></td>
+                                ?> <tr><td><h5><strong><?php echo($row['movname']); ?></strong></h5></td>
                                 <td><h5>
-                                <form class=form-horizontal action=movie.php method=GET>
-                                <input type=hidden name=mov_id value=");?><?php echo($row['movid']);?>
-                                <?php echo("><button type=submit class=btn btn-success style=background:black;color:#FAED26;text-transform:capitalize;>
+                                <form class="form-horizontal" action="movie.php" method="GET">
+                                <input type=hidden name="mov_id" value=<?php echo($row['movid']);?>
+                                ><button type=submit class=btn btn-success style="background:black;color:#FAED26;text-transform:capitalize;">
                                 Click Here To Go To The Movie!
-                                </button></form></td></tr>");
+                                </button></form></td></tr><?php
                             } 
                         }
                         else{
@@ -75,7 +75,7 @@ session_start();    #To Track The Session
              </div>
         </div>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
     </body>
 </html>

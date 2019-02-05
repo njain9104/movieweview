@@ -56,21 +56,21 @@ session_start(); #To Track the Session
                                 $movid=$row['movid'];
 
                                 #Get The Movie Image And Put In Thumbnails
-
-                                echo('<div class=col-md-3><br>
-                                <a href="movies/'."$movid".'/'."$movid".'-1.jpg" data-lightbox="gallery" class="thumbnail">
-                                    <img src="movies/'."$movid".'/'."$movid".'-1.jpg">
+                                ?>
+                                <div class=col-md-3><br>
+                                <a href="movies/<?php echo($movid);?>/<?php echo($movid);?>-1.jpg" data-lightbox="gallery" class="thumbnail">
+                                    <img src="movies/<?php echo($movid);?>/<?php echo($movid);?>-1.jpg">
                                 </a>
                                 <form class=form-horizontal action=movie.php method=GET>
-                            <input type=hidden name=mov_id value=');?><?php echo($movid);?>
-                            <?php echo('><button type=submit class=btn btn-success style=background:black;color:#FAED26;text-transform:capitalize;>'.$row['movname'].'</button>
+                            <input type=hidden name=mov_id value=<?php echo($movid);?>>
+                            <button type=submit class=btn btn-success style=background:black;color:#FAED26;text-transform:capitalize;><?php echo($row['movname']);?></button>
                         
-                        </form></div>');
-
+                        </form></div>
+                                <?php
                             } 
                         }
-                        else{
-                            echo("<h3>No Movies Found</h3>");
+                        else{?>
+                            <h3>No Movies Found</h3><?php
                             }
                     }
                     mysqli_close($con);
@@ -79,7 +79,7 @@ session_start(); #To Track the Session
             </div>
         </div>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
     <!-- Lightbox for Viewing Image in Original Size -->
         <script src="js/lightbox.js"></script>

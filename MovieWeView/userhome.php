@@ -64,13 +64,13 @@ header("Location:index.php");
                         if ($result) {
                             if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
-                                echo("<tr><td><h5 style=text-transform:capitalize;><strong>".$row['movname']."</strong></h5></td>
-                                <td><h5 style=text-transform:capitalize;><strong>".$row['rev']."</strong></h5></td>
-                    </tr>");
+                             ?>   <tr><td><h5 style=text-transform:capitalize;><strong><?php echo($row['movname']) ?></strong></h5></td>
+                                <td><h5 style=text-transform:capitalize;><strong><?php echo($row['rev']); ?></strong></h5></td>
+                    </tr><?php
                             } 
                         }
                         else{
-                            echo("<h3>You Have Not Posted Any Reviews Yet!</h3>");
+                            ?> <h3>You Have Not Posted Any Reviews Yet!</h3> <?php
                         }
                     }
                     mysqli_close($con);
@@ -81,7 +81,7 @@ header("Location:index.php");
              </div>
         </div>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
     </body>
 </html>

@@ -55,7 +55,7 @@ header("Location:index.php");
             </form>
         </div>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
     </body>
 </html>

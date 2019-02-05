@@ -64,10 +64,9 @@ session_start(); #To Track The Session
             <div class="row">
                 <div class="col-md-3">
                 <!-- Get Movie Poster -->
-                <?php echo('<a href="movies/'."$movid".'/'."$movid".'-1.jpg" data-lightbox="gallery" class="thumbnail">
-                                    <img src="movies/'."$movid".'/'."$movid".'-1.jpg">
-                                </a>');
-                ?>
+                <a href="movies/<?php echo($movid);?>/<?php echo($movid);?>-1.jpg" data-lightbox="gallery" class="thumbnail">
+                                    <img src="movies/<?php echo($movid);?>/<?php echo($movid);?>-1.jpg">
+                                </a>
                 </div>
                 <div class="col-md-4" style="text-transform:capitalize;">
                                 <!-- Get Year, Genre and Director -->
@@ -107,15 +106,14 @@ session_start(); #To Track The Session
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                   <div class="item active">
-                                  <?php echo('<img src="movies/'."$movid".'/'."$movid".'-2.jpg" class="img-thumbnail" style="width:100%; height:300px;">'); ?>  
+                                  <img src="movies/<?php echo($movid);?>/<?php echo($movid);?>-2.jpg" class="img-thumbnail" style="width:100%; height:300px;">  
                                   </div>
                             
                                   <div class="item">
-                                  <?php echo('<img src="movies/'."$movid".'/'."$movid".'-3.jpg" class="img-thumbnail" style="width:100%; height:300px;">'); ?>
+                                  <img src="movies/<?php echo($movid);?>/<?php echo($movid);?>-2.jpg" class="img-thumbnail" style="width:100%; height:300px;">
                                   </div>
-                                
                                   <div class="item">
-                                  <?php echo('<img src="movies/'."$movid".'/'."$movid".'-4.jpg" class="img-thumbnail" style="width:100%; height:300px;">'); ?>
+                                  <img src="movies/<?php echo($movid);?>/<?php echo($movid);?>-2.jpg" class="img-thumbnail" style="width:100%; height:300px;">
                                   </div>
                                 </div>
                                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -167,7 +165,7 @@ session_start(); #To Track The Session
                                 if ($result) {
                                     if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {
-                                        echo("<p><strong><li>What ".$row['r_uname']." thinks about the movie!:<br>".$row['rev']."</li></strong></p><hr>");
+                                        ?> <p><strong><li>What <?php echo($row['r_uname']);?> thinks about the movie!:<br><?php echo($row['rev']); ?></li></strong></p><hr><?php
                                     } 
                                 }   
                                 else {
@@ -182,7 +180,7 @@ session_start(); #To Track The Session
             </div>
         </div>
         <?php
-        require_once('footer_inc.php');
+        require_once('footer_inc.html');
         ?>
         <script src="js/bootstrap.js"></script>
         <script src="jquery.js"></script>
